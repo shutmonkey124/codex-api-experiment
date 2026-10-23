@@ -1,0 +1,39 @@
+{
+  "name": "elsewhere-trip-planner",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node --use-env-proxy node_modules/vite/bin/vite.js --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "node --use-env-proxy node_modules/vite/bin/vite.js preview --host 0.0.0.0",
+    "start": "node --use-env-proxy server/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "verify:api": "node --use-env-proxy scripts/verify-api.mjs",
+    "verify:app": "node --use-env-proxy scripts/verify-app.mjs",
+    "check": "npm run build && npm test && npm run test:e2e"
+  },
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.0",
+    "vitest": "^3.2.0"
+  }
+}
